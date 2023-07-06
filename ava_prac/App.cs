@@ -22,10 +22,11 @@ public class App : Application
     }
     public void ApplyTheme(FluentTheme theme, ThemeVariant themeType)
     {
-        theme.DensityStyle = DensityStyle.Compact;
-        Styles.Remove(_currentTheme); // Remove previously present style
-        Styles.Add(theme);
-        _currentTheme = theme;
+        _currentTheme.Palettes.Clear();
+        foreach (var k in theme.Palettes)
+        {
+            _currentTheme.Palettes.Add(k.Key, k.Value);
+        }
         RequestedThemeVariant = themeType;
     }
     public void ApplyTheme(ThemeKey key)
