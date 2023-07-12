@@ -2,6 +2,6 @@ namespace ava_prac;
 
 public enum ThemeKey: byte
 {
-    Light, Dark,
+    DefaultLight, DefaultDark,
     NeoLight, NeoDark
 }
